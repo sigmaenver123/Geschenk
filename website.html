@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M+B</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        color: black;
+        background-color: rgba(243, 229, 213, 0.979);
+    }
+    
+    header {
+        background: #d66c6c;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        text-shadow:
+            -2px -2px 0 black,  
+            2px -2px 0 black,  
+            -2px 2px 0 black,  
+            2px 2px 0 black;
+
+        
+    }
+    
+    
+    main {
+        padding: 20px;
+        text-align: center;
+    }
+    
+
+    .box{
+        background: burlywood;
+        background-color: burlywood; 
+        display: inline-block; 
+        padding: 10px; 
+        border: 2px solid rgb(0, 0, 0); 
+        border-radius: 5px; 
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); 
+        min-width: 700px; 
+        min-height: 250px;
+        text-align: center;
+        font-size: 30px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+
+
+    .image-box {
+        position: absolute; /* Position für die Box */
+        background-color: rgba(255, 255, 255, 0.8); /* Hintergrundfarbe der Box */
+        padding: 10px; /* Innenabstand der Box */
+        border: 2px solid #d66c6c; /* Rahmenfarbe der Box */
+        border-radius: 10px; /* Abgerundete Ecken */
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5); /* Schatten für die Box */
+    }
+
+    #messageButton {
+        display: block; /* Macht den Button zu einem Blockelement */
+        margin: 20px auto; /* Zentriert den Button mit einem vertikalen Abstand */
+        padding: 15px 30px; /* Erhöht die Polsterung des Buttons */
+        font-size: 24px; /* Erhöht die Schriftgröße */
+        background-color: #d66c6c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 300px; /* Feste Breite für den Button */
+    }
+    
+    #messageButton:hover {
+        background-color: #c55d5d;
+    }
+
+    section {
+        margin-bottom: 20px;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 10px 0;
+        background: #333;
+        color: white;
+    }
+
+    .container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+    .image {
+        position: absolute;
+        width: 300px; /* Breite der Bilder */
+        height: 300px;
+        cursor: pointer; /* Zeigt den Browser, dass das Bild klickbar ist */
+    }
+    #image1 {
+        top: 10%; /* Position vertikal */
+        left: 25%; /* Position horizontal */
+        animation: float1 3s infinite; /* Animation für jedes Bild */
+    }
+
+    #image2 {
+        top: 10%; /* Position vertikal */
+        left: 45%; /* Position horizontal */
+        animation: float2 2.5s infinite;
+    }
+
+    #image3 {
+        top: 10%; /* Position vertikal */
+        left: 65%; /* Position horizontal */
+        animation: float3 3.5s infinite;
+    }
+
+    #image4 {
+        top: 60%; /* Position vertikal */
+        left: 65%; /* Position horizontal */
+        animation: float1 3.5s infinite;
+    }
+
+    #image5 {
+        top: 60%; /* Position vertikal */
+        left: 45%; /* Position horizontal */
+        animation: float2 3.5s infinite;
+    }
+
+    #image6 {
+        top: 60%; /* Position vertikal */
+        left: 25%; /* Position horizontal */
+        animation: float3 3.5s infinite;
+    }
+
+    @keyframes float1 {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes float2 {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes float3 {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
+
+    .heart {
+        position: absolute;
+        width: 50px; /* Größe der Herzen */
+        height: 50px;
+        background-image: url('heart.png'); /* Stelle sicher, dass du ein Herzbild hast */
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .left-heart {
+        width: 150px;
+        height: 150px;
+        left: 125px;
+        top: 50%;
+        transform: translateY(50%); /* Positioniere es in der Mitte */
+    }
+    
+    .right-heart {
+        width: 150px;
+        height: 150px;
+        right: 125px;
+        top: 50%;
+        transform: translateY(50%); /* Positioniere es in der Mitte */
+    }
+
+    .heart2 {
+        position: absolute;
+        width: 50px; /* Größe der Herzen */
+        height: 50px;
+        background-image: url('heart.png'); /* Stelle sicher, dass du ein Herzbild hast */
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .left-heart2 {
+        width: 150px;
+        height: 150px;
+        left: 125px;
+        top: 75%;
+        transform: translateY(50%); /* Positioniere es in der Mitte */
+    }
+    
+    .right-heart2 {
+        width: 150px;
+        height: 150px;
+        right: 125px;
+        top: 75%;
+        transform: translateY(50%); /* Positioniere es in der Mitte */
+    }
+
+    .heart3 {
+        position: absolute;
+        width: 50px; /* Größe der Herzen */
+        height: 50px;
+        background-image: url('heart.png'); /* Stelle sicher, dass du ein Herzbild hast */
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .left-heart3 {
+        width: 150px;
+        height: 150px;
+        left: 125px;
+        top: 25%;
+        transform: translateY(50%); /* Positioniere es in der Mitte */
+    }
+    
+    .right-heart3 {
+        width: 150px;
+        height: 150px;
+        right: 125px;
+        top: 25%;
+        transform: translateY(50%); /* Positioniere es in der Mitte */
+    }
+    
+    .button{,,}
+    
+
+</style>
+<body>
+    <header>
+        <h1>Für Dich Michelle!</h1>
+    </header>
+
+    <main>
+        <p> <span class="box">Wenn du so weit schon in diesem Brief gekommen bist, dann bist du hier bei dieser Seite richtig. <br>
+            Bitte beachte nicht meine katastrophalen Programmier Künste, aber damit du mit weißt <br>
+            Während ich grade dies schreibe, bist du komplett eingeschlafen. <br>
+            Vielleicht kommt die auch Fragen wieso ich dies machen oder sonst noch was <br>
+            Ich mache es für dich Michelle weil ich dich sehr liebe! <br> </span><br>                                                            
+            
+        </p>
+    </main>
+
+    <div class="container">
+        <div class="heart left-heart"></div>
+        <div class="heart right-heart"></div>
+        <div class="heart2 left-heart"></div>
+        <div class="heart2 right-heart"></div>
+        <div class="heart3 left-heart"></div>
+        <div class="heart3 right-heart"></div>
+        <img id="image1" class="image" src="1.jpg" alt="Bild 1" onclick="handleClick(0,'Der Anfang von allem war dieses Treffen, wo wir gesehen haben wie gleich wir sind und wir uns so sehr wie so clowns benehmen können und trozdem wir spaß hatten gemeinsam. Ich weiß ich hatte Todes Angst vor dir, weil du auch so wow aussahst und dann fingen wir langsam an direkt so CONNECTION und wir haben und wir waren sofort gleich drauf die ganze Zeit. Etwas was ich niemals vergessen werde. <3')">
+        <img id="image2" class="image" src="2.jpg" alt="Bild 2" onclick="handleClick(1,'Das war an dem Tag wo wir bei Zed übernachtet haben und es war einer der schönsten Sachen die uns passieren hätte können. Danach gab es kein Schämen mehr und allgemein ich war noch nie so beruhigt gewesen als bei dir mein Schatz.')">
+        <img id="image3" class="image" src="3.jpg" alt="Bild 3" onclick="handleClick(2,'Da waren wir bei Zed und ich war Handy und dann hat der fehlende Schlaf reingekickt und dann lag ich da und du hast dieses süße bild gemacht. Ich finde es sehr schön und allgemein wie du auch auf diese Idee kamst ein Foto zu machen. An dem Tag wolltest du Kamillie Tee und ich hab dir den Teuren gekauft weil du bist meine Prinzessin du kriegst das BESTE VOM BESTEM')">
+        <img id="image4" class="image" src="4.jpg" alt="Bild 1" onclick="handleClick(3,'Auch wenn Bild bescheuert ist, Mag ich sehr irgendwie. Es zeigt wie wir den selben Humor eigentlich haben und allgemein auch immer so lustige Sachen machen. Du bist ehrlich die lustigste Person die ich jemals kannte. Du bringst mich immer so fett zum lachen und dass nicht normal. Ehrlich ich liebe dich so sehr du weißt es einfach null %%%% ')">
+        <img id="image5" class="image" src="5.jpg" alt="Bild 2" onclick="handleClick(4,'Ein sehr schöner Tag mit dir und einfach wo ich so mein LIEBLINGS OUTFIT gefunden habe. Auch wenn du in allem perfekt aussieht und egal wann ich finde ehrlich du siehst immer so attraktiv aus und immer so gut aus, ich checke nicht wie du das hinkriegst alter. Das Bild allgemein ist auch sehr us so irgendwie weil wir allgemein immer so blöde Gesichtszüge machen und immer so so AUF KACKE HAUEN!!!')">
+        <img id="image6" class="image" src="6.jpg" alt="Bild 3" onclick="handleClick(5,'Dieses Bild reflektiert in meinem Augen wie ich mich wie mich selber benehmen kann und allgemein wie lustig wir immer auch sind. Ehrlich alle können sich nh Scheibe abschneiden ;P')">
+    
+            <audio id="audio" src="SLOW DANCING IN THE DARK.mp3" autoplay loop></audio>
+    </div>
+
+
+
+    <button id="messageButton" onclick="displayRandomMessage()">Klicke hier! ➡️</button>
+
+
+
+
+
+    <script>
+        const songs = [
+            'SLOW DANCING IN THE DARK.mp3',
+            'cla.mp3',
+            'SLOW DANCING IN THE DARK.mp3',
+            'bea.mp3',
+            'tyler.mp3',
+            'sugar.mp3',
+            'artic.mp3'
+        ];
+
+        let currentSongIndex = 0;
+
+        // Diese Funktion wechselt den Song und zeigt die Info-Box an
+        function handleClick(index, message) {
+            showInfo(message); // Zeigt die Info-Box an
+            changeSong(index); // Wechselt den Song
+        }
+
+        function showInfo(text) {
+            alert(text); // Zeigt die Textinformation an
+        }
+
+        // Diese Funktion wechselt den Song
+        function changeSong(index) {
+            currentSongIndex = index + 1; // Aktuellen Song um 1 erhöhen
+            if (currentSongIndex >= songs.length) {
+                currentSongIndex = 1; // Wiederhole bei song2 (der erste Song ist immer song1)
+            }
+            const audioElement = document.getElementById('audio');
+            audioElement.src = songs[currentSongIndex];
+            audioElement.play();
+        }
+
+        // Startet die Musik
+        function startMusic() {
+            const audioElement = document.getElementById('audio');
+            audioElement.play();
+        }
+
+        // Audio beim Laden der Seite nicht starten
+        window.onload = function() {
+            // Kommen Sie später zum Starten der Musik über die Schaltfläche
+        };
+
+        const messages = [
+        'Ich liebe deine süße Lache',
+        'Ich liebe dein Lächeln',
+        'Ich liebe dein Humor',
+        'Ich liebe deine Art wie du dich um mich kümmerst',
+        'Ich liebe es wie du immer versuchst mich zu verstehen',
+        'Ich liebe dein Körper',
+        'Ich liebe deine Schönen Augen',
+        'Ich liebe deine Art wie du mir deine Liebe zeigst',
+        'Ich liebe es wie du Zeit für mich hast',
+        'Ich liebe es wie du riechst',
+        'Ich liebe es wie du dich immer freust wenn ich dir versuche Freude zumachen',
+        'Ich liebe deine Persönlichkeit',
+        'Ich liebe deine Unsicherheiten',
+        'Ich liebe es wie du nicht was vergisst über mich',
+        'Ich liebe deine Stimme',
+        'Ich liebe dich Michelle',
+        'Ich liebe wie du dich um jemandem sorgst',
+        'Ich liebe es dass du genau so dumm bist wie ich',
+        'Ich liebe es wie du redest',
+        'Ich liebe es wie du mich liebst',
+        'Ich liebe dein Gesicht',
+        
+    ];
+    
+        function displayRandomMessage() {
+        const randomIndex = Math.floor(Math.random() * messages.length);
+        alert(messages[randomIndex]);
+         }
+    </script>
+</body>
+</html>
