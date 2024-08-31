@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M+B</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -98,43 +98,43 @@
     }
     .image {
         position: absolute;
-        width: 180px; /* Breite der Bilder */
-        height: 180px;
+        width: 200px; /* Breite der Bilder */
+        height: 200px;
         cursor: pointer; /* Zeigt den Browser, dass das Bild klickbar ist */
     }
     #image1 {
         top: 10%; /* Position vertikal */
-        right: 35%; /* Position horizontal */
+        left: 25%; /* Position horizontal */
         animation: float1 3s infinite; /* Animation für jedes Bild */
     }
 
     #image2 {
         top: 10%; /* Position vertikal */
-        left: 75%; /* Position horizontal */
+        left: 45%; /* Position horizontal */
         animation: float2 2.5s infinite;
     }
 
     #image3 {
         top: 10%; /* Position vertikal */
-        left: 130%; /* Position horizontal */
+        left: 65%; /* Position horizontal */
         animation: float3 3.5s infinite;
     }
 
     #image4 {
         top: 60%; /* Position vertikal */
-        left: 130%; /* Position horizontal */
+        left: 65%; /* Position horizontal */
         animation: float1 3.5s infinite;
     }
 
     #image5 {
         top: 60%; /* Position vertikal */
-        left: 75%; /* Position horizontal */
+        left: 45%; /* Position horizontal */
         animation: float2 3.5s infinite;
     }
 
     #image6 {
         top: 60%; /* Position vertikal */
-        right: 35%; /* Position horizontal */
+        left: 25%; /* Position horizontal */
         animation: float3 3.5s infinite;
     }
 
@@ -156,7 +156,82 @@
         100% { transform: translateY(0); }
     }
 
+    .heart {
+        position: absolute;
+        width: 25px; /* Größe der Herzen */
+        height: 25px;
+        background-image: url('heart.png'); /* Stelle sicher, dass du ein Herzbild hast */
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .left-heart {
+        width: 80px;
+        height: 150px;
+        left: 125px;
+        top: 50%;
+        transform: translateY(50%); /* Positioniere es in der Mitte */
+    }
+    
+    .right-heart {
+        width: 150px;
+        height: 150px;
+        right: 125px;
+        top: 50%;
+        transform: translateY(50%); /* Positioniere es in der Mitte */
+    }
 
+    .heart2 {
+        position: absolute;
+        width: 50px; /* Größe der Herzen */
+        height: 50px;
+        background-image: url('heart.png'); /* Stelle sicher, dass du ein Herzbild hast */
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .left-heart2 {
+        width: 150px;
+        height: 150px;
+        left: 125px;
+        top: 75%;
+        transform: translateY(50%); /* Positioniere es in der Mitte */
+    }
+    
+    .right-heart2 {
+        width: 150px;
+        height: 150px;
+        right: 125px;
+        top: 75%;
+        transform: translateY(50%); /* Positioniere es in der Mitte */
+    }
+
+    .heart3 {
+        position: absolute;
+        width: 50px; /* Größe der Herzen */
+        height: 50px;
+        background-image: url('heart.png'); /* Stelle sicher, dass du ein Herzbild hast */
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .left-heart3 {
+        width: 150px;
+        height: 150px;
+        left: 125px;
+        top: 25%;
+        transform: translateY(50%); /* Positioniere es in der Mitte */
+    }
+    
+    .right-heart3 {
+        width: 150px;
+        height: 150px;
+        right: 125px;
+        top: 25%;
+        transform: translateY(50%); /* Positioniere es in der Mitte */
+    }
+
+    
 
 </style>
 <body>
@@ -175,7 +250,12 @@
     </main>
 
     <div class="container">
-   
+        <div class="heart left-heart"></div>
+        <div class="heart right-heart"></div>
+        <div class="heart2 left-heart"></div>
+        <div class="heart2 right-heart"></div>
+        <div class="heart3 left-heart"></div>
+        <div class="heart3 right-heart"></div>
         <img id="image1" class="image" src="1.jpg" alt="Bild 1" onclick="handleClick(0,'Der Anfang von allem war dieses Treffen, wo wir gesehen haben wie gleich wir sind und wir uns so sehr wie so clowns benehmen können und trozdem wir spaß hatten gemeinsam. Ich weiß ich hatte Todes Angst vor dir, weil du auch so wow aussahst und dann fingen wir langsam an direkt so CONNECTION und wir haben und wir waren sofort gleich drauf die ganze Zeit. Etwas was ich niemals vergessen werde. <3')">
         <img id="image2" class="image" src="2.jpg" alt="Bild 2" onclick="handleClick(1,'Das war an dem Tag wo wir bei Zed übernachtet haben und es war einer der schönsten Sachen die uns passieren hätte können. Danach gab es kein Schämen mehr und allgemein ich war noch nie so beruhigt gewesen als bei dir mein Schatz.')">
         <img id="image3" class="image" src="3.jpg" alt="Bild 3" onclick="handleClick(2,'Da waren wir bei Zed und ich war am Handy und dann hat der fehlende Schlaf reingekickt und dann lag ich da und du hast dieses süße bild gemacht. Ich finde es sehr schön und allgemein wie du auch auf diese Idee kamst ein Foto zu machen. An dem Tag wolltest du Kamillie Tee und ich hab dir den Teuren gekauft weil du bist meine Prinzessin du kriegst das BESTE VOM BESTEM')">
